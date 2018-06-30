@@ -19,7 +19,7 @@ void SelectScene::update()
 {
     if(Input::MouseL.clicked)
     {
-        ++m_data->counter;
+        ++m_data->score;
         changeScene(SceneName::Game);
     }
 }
@@ -27,6 +27,6 @@ void SelectScene::update()
 void SelectScene::draw() const
 {
     Window::ClientRect().draw(Palette::Blue);
-    m_data->font(L"SELECT:", m_data->counter).drawCenter(Window::Center());
+    m_data->font(L"SELECT:", m_data->score).drawCenter(Window::Center());
 
 }

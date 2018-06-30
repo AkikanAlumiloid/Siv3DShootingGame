@@ -11,7 +11,7 @@ enum SceneName
 };
 extern struct CommonData
 {
-    int counter = 0;
+    int score = 0;
     Font font{50};
 };
 using MyApp = SceneManager<SceneName, CommonData>;

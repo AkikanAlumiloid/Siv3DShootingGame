@@ -3,13 +3,13 @@
 #include<HamFramework.hpp>
 #include"GameDefs.h"
 ///<summary>
-///キャラ及びステージ選択
+///クレジット表記
 ///</summary>
-class SelectScene : public MyApp::Scene
+class CreditScene : public MyApp::Scene
 {
 public:
-    SelectScene();
-    ~SelectScene();
+    CreditScene();
+    ~CreditScene();
     void init() override;
     void update() override;
     void draw() const override;
