@@ -8,6 +8,7 @@ enum SceneName
     Select,
     Game,
     Credit,
+    End,
 };
 extern struct CommonData
 {
@@ -15,3 +16,6 @@ extern struct CommonData
     Font font{50};
 };
 using MyApp = SceneManager<SceneName, CommonData>;
+
+const int WINDOW_SIZE_X = 1280;
+const int WINDOW_SIZE_Y = 720;

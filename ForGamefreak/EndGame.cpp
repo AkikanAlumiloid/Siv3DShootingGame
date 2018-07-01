@@ -13,7 +13,7 @@ EndGame::~EndGame()
 
 void EndGame::Init()
 {
-    //ˆê“xˆ—‚ğ‹²‚Ü‚È‚¢‚Æ‚¤‚Ü‚­“o˜^‚Å‚«‚È‚¢
+    //ˆê“xˆ—‚ğ‹²‚Ü‚È‚¢‚Æ“o˜^‚Å‚«‚È‚¢
     GUI temp(GUIStyle::Default);
     gui = temp;
 

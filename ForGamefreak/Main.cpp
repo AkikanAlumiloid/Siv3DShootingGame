@@ -8,6 +8,8 @@
 
 void Main()
 {
+    Window::Resize(WINDOW_SIZE_X, WINDOW_SIZE_Y);
+
     //シーン登録処理
     MyApp manager;
 

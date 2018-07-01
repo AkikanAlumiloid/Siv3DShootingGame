@@ -166,6 +166,7 @@
     <ClCompile Include="EndGame.cpp" />
     <ClCompile Include="GameScene.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="SelectScene.cpp" />
     <ClCompile Include="TitleScene.cpp" />
   </ItemGroup>
@@ -286,6 +287,7 @@
     <ClInclude Include="EndGame.h" />
     <ClInclude Include="GameDefs.h" />
     <ClInclude Include="GameScene.h" />
+    <ClInclude Include="Player.h" />
     <ClInclude Include="SelectScene.h" />
     <ClInclude Include="TitleScene.h" />
   </ItemGroup>

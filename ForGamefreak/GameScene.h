@@ -2,6 +2,7 @@
 #include<Siv3D.hpp>
 #include<HamFramework.hpp>
 #include"GameDefs.h"
+#include"Player.h"
 ///<summary>
 ///ÉQÅ[ÉÄñ{ï“
 ///</summary>
@@ -13,5 +14,7 @@ public:
     void init() override;
     void update() override;
     void draw() const override;
+private:
+    Player *player;
 };
 
