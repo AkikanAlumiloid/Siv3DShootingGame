@@ -3,7 +3,7 @@
 #include<HamFramework.hpp>
 #include"GameDefs.h"
 ///<summary>
-///ƒLƒƒƒ‰‹y‚ÑƒXƒe[ƒW‘I‘ğ
+///ã‚­ãƒ£ãƒ©åŠã³ã‚¹ãƒ†ãƒ¼ã‚¸é¸æŠ
 ///</summary>
 class SelectScene : public MyApp::Scene
 {

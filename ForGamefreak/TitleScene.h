@@ -3,7 +3,7 @@
 #include<HamFramework.hpp>
 #include"GameDefs.h"
 ///<summary>
-///ƒ^ƒCƒgƒ‹
+///ã‚¿ã‚¤ãƒˆãƒ«
 ///</summary>
 class TitleScene : public MyApp::Scene
 {

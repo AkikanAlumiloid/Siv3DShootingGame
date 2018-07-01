@@ -47,11 +47,11 @@ void Player::Init()
 }
 
 /// <summary>
-/// ƒvƒŒƒCƒ„[ˆÚ“®ˆ—
+/// ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ç§»å‹•å‡¦ç†
 /// </summary>
 void Player::Move()
 {
-    //“¯‚¨‚µ‚Í”½‰‚³‚¹‚È‚¢
+    //åŒæ™‚ãŠã—ã¯åå¿œã•ã›ãªã„
     if((Input::KeyRight.pressed && Input::KeyLeft.pressed) || (Input::KeyUp.pressed && Input::KeyDown.pressed))
     {
         return;

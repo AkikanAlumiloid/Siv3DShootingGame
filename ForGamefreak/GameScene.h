@@ -4,7 +4,7 @@
 #include"GameDefs.h"
 #include"Player.h"
 ///<summary>
-///ÉQÅ[ÉÄñ{ï“
+///„Ç≤„Éº„É†Êú¨Á∑®
 ///</summary>
 class GameScene : public MyApp::Scene
 {

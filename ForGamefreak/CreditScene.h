@@ -3,7 +3,7 @@
 #include<HamFramework.hpp>
 #include"GameDefs.h"
 ///<summary>
-///ƒNƒŒƒWƒbƒg•\‹L
+///ã‚¯ãƒ¬ã‚¸ãƒƒãƒˆè¡¨è¨˜
 ///</summary>
 class CreditScene : public MyApp::Scene
 {
