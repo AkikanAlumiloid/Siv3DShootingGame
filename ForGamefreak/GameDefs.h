@@ -19,3 +19,5 @@ using MyApp = SceneManager<SceneName, CommonData>;
 
 const int WINDOW_SIZE_X = 1280;
 const int WINDOW_SIZE_Y = 720;
+
+const int SHOT_DESTROY_TIME = 60;

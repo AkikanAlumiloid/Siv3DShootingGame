@@ -19,12 +19,12 @@ Player::~Player()
 {
 }
 
+//--------------------------------------------------
 //public
 void Player::Update()
 {
     Move();
-    Triangle pplayerGraph(posx, posy, 40.0);
-    PlayerGraph = pplayerGraph;
+    Shot();
 }
 
 void Player::setSpeed(int speed)
@@ -32,18 +32,38 @@ void Player::setSpeed(int speed)
     this->speed = speed;
 }
 
-void Player::Draw()
+double Player::getSpeed()
 {
-    PlayerGraph.draw();
+    return this->speed;
 }
 
+///<summary>
+///描画処理
+///</summary>
+void Player::Draw()
+{
+    Triangle(posx - 10, posy - 10, posx + 10, posy, posx - 10, posy + 10).draw();
+    
+    for(int i = 0; i < vectorShot.size(); i++)
+    {
+        vectorShot[i].Draw();
+    }
+}
+
+//--------------------------------------------------
 //priavte
+///<summary>
+///初期化設定
+///</summary>
 void Player::Init()
 {
-    posx = (int)WINDOW_SIZE_X / 3;
-    posy = (int)WINDOW_SIZE_Y / 2;
-    Triangle pplayerGraph(posx, posy, 40.0);
-    PlayerGraph = pplayerGraph;
+    posx = WINDOW_SIZE_X / 3;
+    posy = WINDOW_SIZE_Y / 2;
+    shotCount = 30;
+    shotInterval = 30;// ショット間隔
+    shotMaxExists = 5;//画面上に存在できるプレイヤーショット数
+    shotSpeed = 20;
+    shotPower = 1;
 }
 
 /// <summary>
@@ -51,15 +71,10 @@ void Player::Init()
 /// </summary>
 void Player::Move()
 {
-    //同時おしは反応させない
-    if((Input::KeyRight.pressed && Input::KeyLeft.pressed) || (Input::KeyUp.pressed && Input::KeyDown.pressed))
-    {
-        return;
-    }
-
+#pragma region 移動処理
     if(Input::KeyRight.pressed)
     {
-        
+
         posx += speed;
         if(posx > WINDOW_SIZE_X)
         {
@@ -90,10 +105,36 @@ void Player::Move()
             posy = 0;
         }
     }
-
+#pragma endregion
 }
 
-double Player::getSpeed()
+///<summary>
+///発射処理
+///</summary>
+void Player::Shot()
 {
-    return this->speed;
+    //発射
+    if(Input::KeyZ.pressed)
+    {
+        //インターバルに沿ったタイミングかつ存在可能数以下ならば発射
+        if(shotCount % shotInterval == 0 && vectorShot.size() <= shotMaxExists)
+        {
+            //弾生成
+            vectorShot.push_back(::Shot(this->posx, this->posy, this->shotSpeed, this->shotPower));
+            shotCount = 1;
+        }
+        shotCount++;
+    }
+    
+    //発射した弾の更新
+    for(int i = 0; i < vectorShot.size(); i++)
+    {
+        vectorShot[i].Update();
+
+        //削除確定時間になったら該当する弾を削除する
+        if(vectorShot[i].getDestroyTime() <= 0)
+        {
+            vectorShot.erase(vectorShot.begin() + i);
+        }
+    }
 }

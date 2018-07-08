@@ -3,7 +3,7 @@
 #include<HamFramework.hpp>
 #include"GameDefs.h"
 ///<summary>
-///ƒQ[ƒ€I—¹Šm”F
+///ã‚²ãƒ¼ãƒ çµ‚äº†ç¢ºèª
 ///</summary>
 class EndGame
 {

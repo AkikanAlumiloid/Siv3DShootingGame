@@ -1,6 +1,8 @@
 #pragma once
 #include<Siv3D.hpp>
 #include"GameDefs.h"
+#include "Shot.h"
+#include <vector>
 class Player
 {
 public:
@@ -9,12 +11,18 @@ public:
     ~Player();
     void Draw();
     void Update();
+    double getSpeed();
     void setSpeed(int speed);
 private:
-    Triangle PlayerGraph;
     void Init();
     void Move();
-    double posx, posy;
-    double getSpeed();
-    double speed;
+    void Shot();
+    int posx, posy;
+    int speed;
+    int shotCount;
+    int shotInterval;
+    int shotMaxExists;
+    int shotSpeed;
+    int shotPower;
+    std::vector<::Shot> vectorShot;
 };
